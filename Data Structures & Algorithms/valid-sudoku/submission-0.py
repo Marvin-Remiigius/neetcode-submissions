@@ -13,22 +13,70 @@ class Solution:
                 if board[j][i] in seen and board[j][i] != '.':
                     return False
                 seen.add(board[j][i])
-        for r_start in range(0, 9, 3):
-            for c_start in range(0, 9, 3):
-                # r_start and c_start are the top-left coordinates of the current 3x3 block
-                
-                seen = set()
-                
-                # Inner loops to iterate through the elements within the current 3x3 block
-                for i in range(r_start, r_start + 3):
-                    for j in range(c_start, c_start + 3):
-                        element = board[i][j]
-                        
-                        # Check for duplicates, ignoring the '.' placeholder
-                        if element != '.' and element in seen:
-                            return False
-                        
-                        seen.add(element)
+        print("Block 1")
+        seen = set()
+        for i in range(0,3):
+            for j in range(0,3):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 2")
+        seen = set()
+        for i in range(0,3):
+            for j in range(3,6):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 3")
+        seen = set()
+        for i in range(0,3):
+            for j in range(6,9):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 4")
+        seen = set()
+        for i in range(3,6):
+            for j in range(0,3):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 5")
+        seen = set()
+        for i in range(3,6):
+            for j in range(3,6):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 6")
+        seen = set()
+        for i in range(3,6):
+            for j in range(6,9):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 7")
+        seen = set()
+        for i in range(6,9):
+            for j in range(0,3):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 8")
+        seen = set()
+        for i in range(6,9):
+            for j in range(3,6):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+        print("Block 9")
+        seen = set()
+        for i in range(6,9):
+            for j in range(6,9):
+                if board[i][j] in seen and board[i][j] != '.':
+                    return False
+                seen.add(board[i][j])
+
         return True
 
 

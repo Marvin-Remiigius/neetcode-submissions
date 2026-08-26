@@ -1,16 +1,12 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = {}
-        freq = [[] for i in range(len(nums) + 1)]
-
-        for num in nums:
-            count[num] = 1 + count.get(num, 0)
-        for num, cnt in count.items():
-            freq[cnt].append(num)
-
-        res = []
-        for i in range(len(freq) - 1, 0, -1):
-            for num in freq[i]:
-                res.append(num)
-                if len(res) == k:
-                    return res
+        from collections import Counter
+        my_map = Counter(nums)
+        final = []
+        my_hash = list(my_map.items())
+        my_hash.sort(key=lambda x: x[1])
+        for i in my_hash[::-1]:
+            if k!= 0 :
+                final.append(i[0])
+                k-=1
+        return final

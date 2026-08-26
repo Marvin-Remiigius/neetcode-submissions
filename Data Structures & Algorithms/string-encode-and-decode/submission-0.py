@@ -19,7 +19,6 @@ class Solution:
         i = 0
         while i < len(s):
             # 1. Find the length prefix
-            #----> 4#leet4#code3#say5#hello
             j = i
             while s[j] != '#':
                 j += 1

@@ -1,20 +1,15 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        def binary_search(nums,left,right):
-            if left>right:
-                return -1
-            
-            mid = left + (right - left) // 2
+        l, r = 0, len(nums) - 1
 
+        while l <= r:
+            # (l + r) // 2 can lead to overflow
+            m = l + ((r - l) // 2)
 
-            if nums[mid] == target:
-                return mid
-
-            elif nums[mid] > target:
-                return binary_search(nums,left,mid-1)
-
+            if nums[m] > target:
+                r = m - 1
+            elif nums[m] < target:
+                l = m + 1
             else:
-                return binary_search(nums,mid+1,right)
-
-
-        return binary_search(nums,0,len(nums)-1)
+                return m
+        return -1

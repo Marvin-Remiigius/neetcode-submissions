@@ -1,5 +1,6 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        return len(set(nums)) != len(nums)
+        nums.sort()
+        nums_set = set(nums)
 
-
+        return not len(nums_set) == len(nums)

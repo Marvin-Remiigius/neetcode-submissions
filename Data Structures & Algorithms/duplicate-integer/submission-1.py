@@ -1,11 +1,20 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        seen = set()
+        # a=[]
+        # for i in nums:
+        #     a.append(i)
+        # for i in a:
+        #     if count(i)>=2:
+        #         return True
+        #     else:
+        #         return False
+
+
+        a = []
 
         for i in nums:
-            if i in seen:
+            if i not in a:
+                a.append(i)
+            else:
                 return True
-            seen.add(i)
         return False
-
-

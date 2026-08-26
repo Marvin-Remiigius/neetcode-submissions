@@ -1,14 +1,9 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        final = []
-        
-
+        import math
+        new_nums = []
+        total_prod = 1
         for i in range(len(nums)):
-            product = 1
-            for j in range(len(nums)):
-                if j!= i:
-                    product *= nums[j]
+            new_nums.append(math.prod(nums[:i]+nums[i+1:]))
 
-            final.append(product)
-
-        return final
+        return new_nums
